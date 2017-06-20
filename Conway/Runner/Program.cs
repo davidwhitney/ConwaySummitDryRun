@@ -9,15 +9,16 @@ namespace Runner
         static void Main(string[] args)
         {
             var sim = new Simulation();
+            sim.Populate();
             while (true)
             {
                 sim.Step();
                 var state = sim.ToString();
 
-                Console.Clear();
+                Console.SetCursorPosition(0, 0);
                 Console.WriteLine(state);
 
-                Thread.Sleep(100);
+                Thread.Sleep(500);
             }
         }
     }
