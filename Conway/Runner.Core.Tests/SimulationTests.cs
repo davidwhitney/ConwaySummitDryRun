@@ -57,10 +57,10 @@ namespace Runner.Core.Tests
         }
 
         [Test]
-        public void Step_CellHasMoreThanTwoLivingNeighbours_Dies()
+        public void Step_CellHasMoreThanThreeLivingNeighbours_Dies()
         {
             var sim = new Simulation();
-            sim.Populate("AA...\r\n" +
+            sim.Populate("AAA..\r\n" +
                          "AA...\r\n" +
                          ".....\r\n" +
                          ".....\r\n" +
@@ -70,8 +70,8 @@ namespace Runner.Core.Tests
             var board = sim.ToString();
 
 
-            Assert.That(board, Is.EqualTo(".A...\r\n" +
-                                          "A....\r\n" +
+            Assert.That(board, Is.EqualTo("A.A..\r\n" +
+                                          "A.A..\r\n" +
                                           ".....\r\n" +
                                           ".....\r\n" +
                                           ".....\r\n"));
@@ -112,9 +112,9 @@ namespace Runner.Core.Tests
             var board = sim.ToString();
 
 
-            Assert.That(board, Is.EqualTo(".....\r\n" +
-                                          ".AA..\r\n" +
-                                          ".A...\r\n" +
+            Assert.That(board, Is.EqualTo("AA...\r\n" +
+                                          "AA...\r\n" +
+                                          ".....\r\n" +
                                           ".....\r\n" +
                                           ".....\r\n"));
         }
